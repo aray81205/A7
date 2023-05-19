@@ -106,6 +106,10 @@ const TodoPage = () => {
       });
     });
   };
+  const handleDeleteTodo = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+  const todoItemCount = todos.length;
 
   return (
     <div>
@@ -122,8 +126,9 @@ const TodoPage = () => {
         onToggleDown={handleToggleDown}
         onChangeMode={handleChangeMode}
         onSave={handleSave}
+        onDelete={handleDeleteTodo}
       />
-      <Footer />
+      <Footer todoItemCount={todoItemCount} />
     </div>
   );
 };
