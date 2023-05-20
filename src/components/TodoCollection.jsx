@@ -2,7 +2,7 @@ import TodoItem from './TodoItem';
 
 const TodoCollection = ({
   todos,
-  onToggleDone,
+  onToggleDown,
   onSave,
   onDelete,
   onChangeMode,
@@ -15,7 +15,7 @@ const TodoCollection = ({
             key={todo.id}
             todo={todo}
             onSave={({ id, title }) => onSave?.({ id, title })}
-            onToggleDone={(id) => onToggleDone?.(id)}
+            onToggleDone={(id) => onToggleDown?.(id)}
             onChangeMode={({ id, isEdit }) => onChangeMode?.({ id, isEdit })}
             onDelete={(id) => onDelete?.(id)}
           />
